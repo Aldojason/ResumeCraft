@@ -4,7 +4,7 @@ A modern, AI-powered resume builder that helps you create professional resumes w
 
 ## 🌐 Live Demo
 
-**[Try ResumeCraft Live](https://resumecraft.onrender.com)**
+**[Try ResumeCraft Live](https://resumecraft-gmoz.onrender.com)**
 
 ## ✨ Features
 
