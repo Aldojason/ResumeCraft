@@ -202,7 +202,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
     <div className={cn("bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto lg:border-r", className)}>
       <div className="p-4 sm:p-6">
         {/* Auto-save indicator */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
             <span>Resume Progress</span>
             <div className="flex items-center space-x-2">
@@ -219,14 +219,14 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
 
         <Form {...form}>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7 mb-4 sm:mb-6 gap-1">
+            <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7 mb-4 sm:mb-6 gap-1 p-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
                 return (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs p-2 sm:p-3"
+                    className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs p-2 sm:p-3 rounded-md"
                     data-testid={`tab-${tab.id}`}
                   >
                     <Icon className="w-4 h-4 sm:w-4 sm:h-4" />
@@ -237,16 +237,16 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
             </TabsList>
 
             {/* Personal Information */}
-            <TabsContent value="personal" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
+            <TabsContent value="personal" className="space-y-4 sm:space-y-6">
+              <Card className="border-0 shadow-sm">
+                <CardHeader className="pb-3 sm:pb-6">
+                  <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
                     <User className="w-5 h-5 text-primary" />
                     <span>Personal Information</span>
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <CardContent className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <FormField
                       control={form.control}
                       name="personalInfo.firstName"

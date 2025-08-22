@@ -70,12 +70,12 @@ export function ResumePreview({
   const templateStyles = getTemplateStyles(template);
 
   return (
-    <div className={cn("bg-gray-100 dark:bg-gray-900 overflow-y-auto", className)}>
-      <div className="p-3 sm:p-6">
+    <div className={cn("bg-gray-50 dark:bg-gray-900 overflow-y-auto", className)}>
+      <div className="p-4 sm:p-6">
         {/* Controls */}
         <div className="mb-4 sm:mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Live Preview</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Live Preview</h3>
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {/* Template Selector */}
               <Select value={template} onValueChange={onTemplateChange}>
@@ -141,7 +141,7 @@ export function ResumePreview({
           className="transition-transform origin-top"
           style={{ transform: `scale(${zoom / 100})` }}
         >
-          <div className={cn(templateStyles.container, "w-full max-w-4xl mx-auto px-2 sm:px-0")}>
+          <div className={cn(templateStyles.container, "w-full max-w-4xl mx-auto px-3 sm:px-0")}>
             {/* Header */}
             <div className={templateStyles.header}>
               {resumeData.template === "executive" ? (

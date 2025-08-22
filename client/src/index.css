@@ -227,6 +227,36 @@
     padding: 0.5rem;
     font-size: 0.75rem;
   }
+  
+  /* Better mobile layout spacing */
+  .space-y-4 > * + * {
+    margin-top: 1.25rem;
+  }
+  
+  /* Improve card padding on mobile */
+  [data-radix-card-content] {
+    padding: 1rem;
+  }
+  
+  /* Better input field spacing */
+  .space-y-4 > div {
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve section headers */
+  h3, h4, h5, h6 {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Better mobile form layout */
+  .grid > * {
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve mobile preview spacing */
+  .preview-container {
+    padding: 1rem;
+  }
 }
 
 /* Prevent horizontal scroll on mobile */
@@ -238,4 +268,34 @@ html, body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Better mobile container spacing */
+  .mobile-container {
+    padding: 0.75rem;
+  }
+  
+  /* Improve mobile form sections */
+  .mobile-form-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Better mobile card styling */
+  .mobile-card {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Improve mobile input styling */
+  .mobile-input {
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+  }
+  
+  /* Better mobile button spacing */
+  .mobile-button-group {
+    gap: 0.5rem;
+  }
 }
