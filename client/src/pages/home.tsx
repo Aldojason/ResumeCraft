@@ -148,28 +148,28 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16">
             {/* Logo and Brand */}
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <FileText className="text-white text-sm" />
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-lg flex items-center justify-center">
+                <FileText className="text-white text-xs sm:text-sm" />
               </div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">AI Resume Builder</h1>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">AI Resume Builder</h1>
             </div>
 
             {/* Navigation and Controls */}
-            <div className="flex items-center space-x-6">
-              {/* Progress */}
-              <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-                <span>Progress:</span>
-                <div className="w-20 h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+            <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-6">
+              {/* Progress - Hidden on mobile, shown on tablet+ */}
+              <div className="hidden sm:flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <span className="hidden md:inline">Progress:</span>
+                <div className="w-16 md:w-20 h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
                   <div 
                     className="h-2 bg-primary rounded-full transition-all duration-300"
                     style={{ width: `${completionPercentage()}%` }}
                   ></div>
                 </div>
-                <span>{completionPercentage()}%</span>
+                <span className="hidden md:inline">{completionPercentage()}%</span>
               </div>
 
               {/* Templates Button */}
@@ -178,18 +178,21 @@ export default function Home() {
                 size="sm"
                 onClick={() => setIsTemplateOpen(true)}
                 data-testid="button-open-template-selector"
+                className="hidden sm:flex"
               >
-                Templates
+                <span className="hidden md:inline">Templates</span>
               </Button>
 
               {/* AI Assistant Button */}
               <Button
                 onClick={() => setIsAIOpen(true)}
-                className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-xs sm:text-sm"
                 data-testid="button-open-ai-assistant"
+                size="sm"
               >
-                <Sparkles className="w-4 h-4 mr-2" />
-                AI Assistant
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">AI Assistant</span>
+                <span className="sm:hidden">AI</span>
               </Button>
 
               {/* Theme Toggle */}
@@ -200,9 +203,9 @@ export default function Home() {
                 data-testid="button-toggle-theme"
               >
                 {theme === "light" ? (
-                  <Moon className="w-4 h-4" />
+                  <Moon className="w-3 h-3 sm:w-4 sm:h-4" />
                 ) : (
-                  <Sun className="w-4 h-4" />
+                  <Sun className="w-3 h-3 sm:w-4 sm:h-4" />
                 )}
               </Button>
             </div>
@@ -211,13 +214,13 @@ export default function Home() {
       </header>
 
       {/* Main Application */}
-      <div className="flex h-[calc(100vh-4rem)]">
+      <div className="flex flex-col lg:flex-row h-[calc(100vh-4rem)]">
         {/* Resume Form */}
         <ResumeForm
           resumeData={resumeData}
           onDataChange={handleDataChange}
           resumeId={currentResumeId}
-          className="w-1/2"
+          className="w-full lg:w-1/2 h-full lg:h-auto lg:min-h-0"
         />
 
         {/* Resume Preview */}
@@ -226,7 +229,7 @@ export default function Home() {
           template={resumeData.template}
           onTemplateChange={handleTemplateChange}
           onOpenTemplateSelector={() => setIsTemplateOpen(true)}
-          className="w-1/2"
+          className="w-full lg:w-1/2 h-full lg:h-auto lg:min-h-0"
         />
       </div>
 

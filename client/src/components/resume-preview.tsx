@@ -71,16 +71,16 @@ export function ResumePreview({
 
   return (
     <div className={cn("bg-gray-100 dark:bg-gray-900 overflow-y-auto", className)}>
-      <div className="p-6">
+      <div className="p-3 sm:p-6">
         {/* Controls */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-4 sm:mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Live Preview</h3>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Template Selector */}
               <Select value={template} onValueChange={onTemplateChange}>
-                <SelectTrigger className="w-40" data-testid="select-template">
-                  <SelectValue placeholder="Select template" />
+                <SelectTrigger className="w-32 sm:w-40" data-testid="select-template">
+                  <SelectValue placeholder="Template" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="modern">Modern Template</SelectItem>
@@ -95,6 +95,7 @@ export function ResumePreview({
                 size="sm"
                 onClick={onOpenTemplateSelector}
                 data-testid="button-open-templates"
+                className="hidden sm:flex"
               >
                 <Layers className="w-4 h-4 mr-2" />
                 Templates
@@ -109,9 +110,9 @@ export function ResumePreview({
                   disabled={zoom <= 50}
                   data-testid="button-zoom-out"
                 >
-                  <ZoomOut className="w-4 h-4" />
+                  <ZoomOut className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
-                <span className="px-2 text-sm text-gray-600 dark:text-gray-400 border-x border-gray-300 dark:border-gray-600">
+                <span className="px-1 sm:px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 border-x border-gray-300 dark:border-gray-600">
                   {zoom}%
                 </span>
                 <Button
@@ -121,14 +122,15 @@ export function ResumePreview({
                   disabled={zoom >= 150}
                   data-testid="button-zoom-in"
                 >
-                  <ZoomIn className="w-4 h-4" />
+                  <ZoomIn className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Button>
               </div>
 
               {/* Export Button */}
-              <Button onClick={handleExportPDF} data-testid="button-export-pdf">
-                <Download className="w-4 h-4 mr-2" />
-                Export PDF
+              <Button onClick={handleExportPDF} data-testid="button-export-pdf" size="sm" className="text-xs sm:text-sm">
+                <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">Export PDF</span>
+                <span className="sm:hidden">PDF</span>
               </Button>
             </div>
           </div>

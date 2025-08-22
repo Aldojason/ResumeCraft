@@ -168,3 +168,52 @@
     color: black !important;
   }
 }
+
+/* Mobile-friendly improvements */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better scrolling on mobile */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Better spacing for mobile */
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  /* Improve form spacing */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  /* Better button spacing */
+  .space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  
+  .space-x-3 > * + * {
+    margin-left: 0.75rem;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
