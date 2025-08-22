@@ -257,6 +257,47 @@
   .preview-container {
     padding: 1rem;
   }
+  
+  /* Better mobile form sections */
+  .mobile-form-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(249, 250, 251, 0.5);
+    border-radius: 0.5rem;
+  }
+  
+  /* Improve mobile input styling */
+  input, textarea, select {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+  }
+  
+  /* Better mobile button styling */
+  button {
+    border-radius: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Improve mobile card styling */
+  [data-radix-card-root] {
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Better mobile tab styling */
+  [role="tablist"] {
+    background: rgba(249, 250, 251, 0.5);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+  }
+  
+  /* Improve mobile preview area */
+  .preview-area {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Prevent horizontal scroll on mobile */
@@ -297,5 +338,49 @@ html {
   /* Better mobile button spacing */
   .mobile-button-group {
     gap: 0.5rem;
+  }
+}
+
+/* Tablet-specific improvements */
+@media (min-width: 641px) and (max-width: 1279px) {
+  /* Better tablet layout */
+  .tablet-layout {
+    padding: 1.5rem;
+  }
+  
+  /* Improve tablet form sections */
+  .tablet-form-section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Better tablet card styling */
+  .tablet-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Improve tablet input styling */
+  .tablet-input {
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  /* Better tablet button spacing */
+  .tablet-button-group {
+    gap: 0.75rem;
+  }
+  
+  /* Improve tablet tab navigation */
+  [role="tablist"] {
+    background: rgba(249, 250, 251, 0.7);
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+  }
+  
+  /* Better tablet preview area */
+  .tablet-preview-area {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 8px -2px rgba(0, 0, 0, 0.1);
   }
 }

@@ -71,7 +71,7 @@ export function ResumePreview({
 
   return (
     <div className={cn("bg-gray-50 dark:bg-gray-900 overflow-y-auto", className)}>
-      <div className="p-4 sm:p-6">
+      <div className="p-3 sm:p-4 xl:p-6">
         {/* Controls */}
         <div className="mb-4 sm:mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4">
@@ -79,7 +79,7 @@ export function ResumePreview({
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {/* Template Selector */}
               <Select value={template} onValueChange={onTemplateChange}>
-                <SelectTrigger className="w-32 sm:w-40" data-testid="select-template">
+                <SelectTrigger className="w-28 sm:w-36 xl:w-40" data-testid="select-template">
                   <SelectValue placeholder="Template" />
                 </SelectTrigger>
                 <SelectContent>
@@ -138,7 +138,7 @@ export function ResumePreview({
 
         {/* Resume Preview Document */}
         <div 
-          className="transition-transform origin-top"
+          className="transition-transform origin-top preview-area tablet-preview-area"
           style={{ transform: `scale(${zoom / 100})` }}
         >
           <div className={cn(templateStyles.container, "w-full max-w-4xl mx-auto px-3 sm:px-0")}>

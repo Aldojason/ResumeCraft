@@ -159,17 +159,17 @@ export default function Home() {
             </div>
 
             {/* Navigation and Controls */}
-            <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-6">
+            <div className="flex items-center space-x-2 sm:space-x-3 xl:space-x-6">
               {/* Progress - Hidden on mobile, shown on tablet+ */}
-              <div className="hidden sm:flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-                <span className="hidden md:inline">Progress:</span>
-                <div className="w-16 md:w-20 h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+              <div className="hidden md:flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+                <span className="hidden lg:inline">Progress:</span>
+                <div className="w-16 lg:w-20 h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
                   <div 
                     className="h-2 bg-primary rounded-full transition-all duration-300"
                     style={{ width: `${completionPercentage()}%` }}
                   ></div>
                 </div>
-                <span className="hidden md:inline">{completionPercentage()}%</span>
+                <span className="hidden lg:inline">{completionPercentage()}%</span>
               </div>
 
               {/* Templates Button */}
@@ -178,9 +178,9 @@ export default function Home() {
                 size="sm"
                 onClick={() => setIsTemplateOpen(true)}
                 data-testid="button-open-template-selector"
-                className="hidden sm:flex"
+                className="hidden md:flex"
               >
-                <span className="hidden md:inline">Templates</span>
+                <span className="hidden lg:inline">Templates</span>
               </Button>
 
               {/* AI Assistant Button */}
@@ -214,13 +214,13 @@ export default function Home() {
       </header>
 
       {/* Main Application */}
-      <div className="flex flex-col lg:flex-row h-[calc(100vh-4rem)]">
+      <div className="flex flex-col xl:flex-row h-[calc(100vh-4rem)]">
         {/* Resume Form */}
         <ResumeForm
           resumeData={resumeData}
           onDataChange={handleDataChange}
           resumeId={currentResumeId}
-          className="w-full lg:w-1/2 h-auto lg:h-full lg:min-h-0 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+          className="w-full xl:w-1/2 h-auto xl:h-full xl:min-h-0 border-b xl:border-b-0 xl:border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
         />
 
         {/* Resume Preview */}
@@ -229,7 +229,7 @@ export default function Home() {
           template={resumeData.template}
           onTemplateChange={handleTemplateChange}
           onOpenTemplateSelector={() => setIsTemplateOpen(true)}
-          className="w-full lg:w-1/2 h-auto lg:h-full lg:min-h-0 bg-gray-50 dark:bg-gray-900"
+          className="w-full xl:w-1/2 h-auto xl:h-full xl:min-h-0 bg-gray-50 dark:bg-gray-900"
         />
       </div>
 
