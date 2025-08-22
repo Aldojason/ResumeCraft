@@ -200,7 +200,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
 
   return (
     <div className={cn("bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto lg:border-r", className)}>
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {/* Auto-save indicator */}
         <div className="mb-6">
           <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
@@ -219,18 +219,18 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
 
         <Form {...form}>
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7 mb-6">
+            <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7 mb-4 sm:mb-6 gap-1">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
                 return (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    className="flex items-center space-x-2 text-xs"
+                    className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 text-xs p-2 sm:p-3"
                     data-testid={`tab-${tab.id}`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{tab.label}</span>
+                    <Icon className="w-4 h-4 sm:w-4 sm:h-4" />
+                    <span className="hidden sm:inline text-xs">{tab.label}</span>
                   </TabsTrigger>
                 );
               })}
@@ -246,7 +246,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="personalInfo.firstName"
@@ -325,7 +325,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                     )}
                   />
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="personalInfo.email"
@@ -495,7 +495,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           </Button>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <Input
                             placeholder="Position Title"
                             value={exp.position}
@@ -510,7 +510,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           />
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                           <Input
                             placeholder="Start Date"
                             value={exp.startDate}
@@ -582,7 +582,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           </Button>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <Input
                             placeholder="Degree"
                             value={edu.degree}
@@ -597,7 +597,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           />
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                           <Input
                             placeholder="Start Date"
                             value={edu.startDate}
@@ -730,7 +730,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                             onChange={(e) => updateProject(index, "technologies", e.target.value)}
                             data-testid={`input-project-technologies-${index}`}
                           />
-                          <div className="grid grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <Input
                               placeholder="Project URL"
                               value={project.url || ""}
@@ -786,7 +786,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           </Button>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <Input
                             placeholder="Certification Name"
                             value={cert.name}
@@ -801,7 +801,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           />
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
                           <Input
                             placeholder="Date (YYYY-MM)"
                             value={cert.date}
@@ -869,7 +869,7 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
                           </Button>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                           <Input
                             placeholder="Title"
                             value={ach.title}

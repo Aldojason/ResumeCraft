@@ -220,7 +220,7 @@ export default function Home() {
           resumeData={resumeData}
           onDataChange={handleDataChange}
           resumeId={currentResumeId}
-          className="w-full lg:w-1/2 h-full lg:h-auto lg:min-h-0"
+          className="w-full lg:w-1/2 h-auto lg:h-full lg:min-h-0 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-700"
         />
 
         {/* Resume Preview */}
@@ -229,7 +229,7 @@ export default function Home() {
           template={resumeData.template}
           onTemplateChange={handleTemplateChange}
           onOpenTemplateSelector={() => setIsTemplateOpen(true)}
-          className="w-full lg:w-1/2 h-full lg:h-auto lg:min-h-0"
+          className="w-full lg:w-1/2 h-auto lg:h-full lg:min-h-0"
         />
       </div>
 

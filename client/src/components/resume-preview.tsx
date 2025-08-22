@@ -76,7 +76,7 @@ export function ResumePreview({
         <div className="mb-4 sm:mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-4">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Live Preview</h3>
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {/* Template Selector */}
               <Select value={template} onValueChange={onTemplateChange}>
                 <SelectTrigger className="w-32 sm:w-40" data-testid="select-template">
@@ -141,7 +141,7 @@ export function ResumePreview({
           className="transition-transform origin-top"
           style={{ transform: `scale(${zoom / 100})` }}
         >
-          <div className={cn(templateStyles.container, "w-full max-w-4xl mx-auto")}>
+          <div className={cn(templateStyles.container, "w-full max-w-4xl mx-auto px-2 sm:px-0")}>
             {/* Header */}
             <div className={templateStyles.header}>
               {resumeData.template === "executive" ? (
@@ -212,7 +212,7 @@ export function ResumePreview({
                       {resumeData.personalInfo.title}
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm text-inherit opacity-80">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-inherit opacity-80">
                     <div>
                       {resumeData.personalInfo.email && (
                         <div>Email: {resumeData.personalInfo.email}</div>
