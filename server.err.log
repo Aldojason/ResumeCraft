@@ -1,0 +1,315 @@
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async generateProfessionalSummary (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:243:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:415:23 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:37:48 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_697be5d748964ebd9aefc6d8a8a45e85',
+    'x-envoy-upstream-service-time': '22',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=4ML31G6uvsZDAeQIQ8n3yY4RGCJu0HzQ.HLSEkk_G9Q-1755790668-1.0.1.1-Y_cBKLyk2Mvy2kIPKYATwC7U9ct6pilgnkoS.9ghbO8kf8d.j5p8taOI8toW9f7CAyY8u01ffRW8YfBdsKkS1oBk1s_m7Rxs6hDamJMwRUU; path=/; expires=Thu, 21-Aug-25 16:07:48 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=_JsUX594YdoregXEEyXKao5x2JmllmVCZslQ7iYfEsc-1755790668344-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b36bb6ba17f6a-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_697be5d748964ebd9aefc6d8a8a45e85',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:37:55 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_6d580940ef3b48cb89e752b6c747831b',
+    'x-envoy-upstream-service-time': '23',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=rxySTe3kTnK1NJD2p9LBzcTBmcx0QMGVquLoQTB3Nq8-1755790675-1.0.1.1-l71XFEAzuVysZURJAbYxO7rEMqiXqcRm6dqe3kRdNm65PgIpzGAprB2DEzDLnaPIib8iU_4XsrDC7dqp7.PEzy.i_Q6JdKo0Oo56FQudznk; path=/; expires=Thu, 21-Aug-25 16:07:55 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=ZliRiRqUDCA8z.iSTqKd71tN7nxPcpa_HDiPD_LGe5U-1755790675670-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b36e8ec56c6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_6d580940ef3b48cb89e752b6c747831b',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:37:57 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_a537dc7ed9dc4431825cc18992094719',
+    'x-envoy-upstream-service-time': '20',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=8qoDWLGhhfsxhrld8klILsC9NMwTAiAdHJTtRS5gWRU-1755790677-1.0.1.1-07EC4CgBg8uRZwgP61eVu3CT6_auhluLrFtvHZ69bFqyXn7ElK5vkqEv6P7fQaGjeGNT5V55KPwRGeTaQh.Zg0NbVhlR0nMwIA1tTjFUKHI; path=/; expires=Thu, 21-Aug-25 16:07:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=5xDgpIJB1LEca4byOj_IxKoW0QE4J17iSjegUFPgsJU-1755790677557-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b36f50a0fc6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_a537dc7ed9dc4431825cc18992094719',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:37:59 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_5b5a556acb3d43958a350456443bc78f',
+    'x-envoy-upstream-service-time': '11',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=kpb4kIU0pQon6BEXMDMbK4E44AWVC6o1uQBQ7tVKUIQ-1755790679-1.0.1.1-n8fm.blg2Gzc_c7uIQyQQ8YJwzuwqpiBCYSPxLqzOXFjNlkCtuduJNOTl6dskYVJqxe8rKyL.G0oxiw8TRJpPhkckIUEx93sM.5g4aumho0; path=/; expires=Thu, 21-Aug-25 16:07:59 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=305MCypivkgBI2UL2FLl5OBJlnFpjJGnEulk9B4a_cw-1755790679418-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b3700cd06c6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_5b5a556acb3d43958a350456443bc78f',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:38:02 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_1fd674e3c9af4129923b2eaf2ff1f2a6',
+    'x-envoy-upstream-service-time': '20',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=1rBRYkqVB6TBDkUF.wegJ50DPzJvaZObVCo7SXxgPTI-1755790682-1.0.1.1-LT3bEa9ICkOj8H4ctUWd_6fwQuMd1.SasjDaiGYTuESYQLV1MEqxPR8alt6FcUtCkkLzQ.FCExW9uBpcc3vyxk9duZF2kPFV0p_zNVkvnDw; path=/; expires=Thu, 21-Aug-25 16:08:02 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=6toOPUxDWuHw1wytl4QagvA0hDo8Pvoq6H3r2a1WkdA-1755790682122-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b37117934c6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_1fd674e3c9af4129923b2eaf2ff1f2a6',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:38:04 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_48c80b8289f34a22a3a4f6613abeaae4',
+    'x-envoy-upstream-service-time': '1',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=1zOiNc5Qzqt0JSkfEmsnOUK3q1Yq90ZiGj4gKE6RsPU-1755790684-1.0.1.1-F3EulZTsztKEzTJ6ipoIfRWYDa3gJd.VueoZ3jF7VqvL0E94bHhrZlPqX4lN4hriWN0pUWDsQjJNMaYGQLQnhL2zWXqvouFb6BTMFwYJY_c; path=/; expires=Thu, 21-Aug-25 16:08:04 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=SV8fIaD0QoOtxx61oLdcMNUK7_sB3F18f.A09tvw7F8-1755790684653-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b37218a4fc6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_48c80b8289f34a22a3a4f6613abeaae4',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:38:07 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_008796113b14413c9888d7c90e5cde49',
+    'x-envoy-upstream-service-time': '89',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=r2kq9qiDKqAKvYPtwYj56rkOnMGFbTAEpW3UK0HB8wA-1755790687-1.0.1.1-qtrtfnLS348Niyuji7pOaV0XT3APDJYs.cthORz1tRXPQu6vc8LwlDe25hcPZ4DXLdYB4yeI7PwAdwPqBOs14NmWu7qwi7H69b_IrHYACOc; path=/; expires=Thu, 21-Aug-25 16:08:07 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=b8PJf8bxFFETrpBK8XFiRF8AjTA9XEkzJDGQdDfHSjo-1755790687139-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b372ffdb2c6ab-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_008796113b14413c9888d7c90e5cde49',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async generateProfessionalSummary (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:243:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:415:23 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 15:38:13 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_6f47383a95804a9b954985d9a12df717',
+    'x-envoy-upstream-service-time': '13',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=m66XqwLRaG295RcqnphB85O5TVw.QE_zD2tq2YHif_U-1755790693-1.0.1.1-vh91aeogBPfeNsG5jYmG1lWdABwaXhVGP2_dOUQuqLy.fXhza.G0fU_RNm_YFCzBarxiZMsvJlATP98d8xwoSrCI6bPAb66iD2dvftse5QY; path=/; expires=Thu, 21-Aug-25 16:08:13 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=eSxeEP5hWhQPxab0FBHqnnlo3heJ0zeNxFEV12d8G0M-1755790693119-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b37564f050bbe-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_6f47383a95804a9b954985d9a12df717',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}
+OpenAI API error: AuthenticationError: 401 Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.
+    at APIError.generate (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/core/error.mjs:44:20)
+    at OpenAI.makeStatusError (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:156:32)
+    at OpenAI.makeRequest (file:///D:/ResumeCraft/ResumeCraft/node_modules/openai/client.mjs:301:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async analyzeResumeForATS (file:///D:/ResumeCraft/ResumeCraft/dist/index.js:276:22)
+    at async file:///D:/ResumeCraft/ResumeCraft/dist/index.js:427:24 {
+  status: 401,
+  headers: Headers {
+    date: 'Thu, 21 Aug 2025 16:07:49 GMT',
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': '256',
+    connection: 'keep-alive',
+    vary: 'Origin',
+    'x-request-id': 'req_d354807e25124b538e02853466d6f438',
+    'x-envoy-upstream-service-time': '100',
+    'cf-cache-status': 'DYNAMIC',
+    'set-cookie': '__cf_bm=D1_ESBabMsdW6fQ7QF8_jfwr0SQ1io8KYB1JlVrH1GI-1755792469-1.0.1.1-7PHJIN7v2zbRbUWwFLkVFLG8EKAYCb7OSyMZINvQPlvwj1RUXDyM0aHM9Mq3hlR2yWGeNOQoy1CGR.NOX9eRhneLbIJglaWmHD1z0MsTSjQ; path=/; expires=Thu, 21-Aug-25 16:37:49 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=ONNOCDMReMfwrED9rDPvYJIDvoKfDv5AyAGckb9AEQQ-1755792469865-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None',
+    'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+    'x-content-type-options': 'nosniff',
+    server: 'cloudflare',
+    'cf-ray': '972b62b66e3c06b8-MAA',
+    'alt-svc': 'h3=":443"; ma=86400'
+  },
+  requestID: 'req_d354807e25124b538e02853466d6f438',
+  error: {
+    message: 'Incorrect API key provided: set-me. You can find your API key at https://platform.openai.com/account/api-keys.',
+    type: 'invalid_request_error',
+    param: null,
+    code: 'invalid_api_key'
+  },
+  code: 'invalid_api_key',
+  param: null,
+  type: 'invalid_request_error'
+}

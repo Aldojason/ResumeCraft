@@ -1,0 +1,592 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Builder - Professional Resume Creation Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: {
+                            bg: '#0F172A',
+                            surface: '#1E293B',
+                            text: '#F1F5F9'
+                        }
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50 dark:bg-dark-bg transition-colors duration-200">
+    <!-- @COMPONENT: AppHeader [navigation, theme toggle, user menu] -->
+    <header class="bg-white dark:bg-dark-surface shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-file-alt text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-900 dark:text-dark-text">AI Resume Builder</h1>
+                </div>
+
+                <!-- Navigation and Controls -->
+                <div class="flex items-center space-x-6">
+                    <!-- Templates Button -->
+                    <button class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Templates</span>
+                    </button>
+
+                    <!-- Export Button -->
+                    <button class="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-download"></i>
+                        <span>Export PDF</span>
+                    </button>
+
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+
+                    <!-- User Menu -->
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                            <div class="w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-gray-600 dark:text-gray-300 text-xs"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: AppHeader -->
+
+    <!-- @COMPONENT: MainApplication [split layout with form and preview] -->
+    <div class="flex h-[calc(100vh-4rem)]">
+        <!-- @COMPONENT: ResumeForm [left sidebar with form sections] -->
+        <div class="w-1/2 bg-white dark:bg-dark-surface border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
+            <div class="p-6">
+                <!-- Progress Indicator -->
+                <div class="mb-6">
+                    <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
+                        <span>Resume Completion</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Section Navigation -->
+                <div class="mb-6">
+                    <nav class="flex flex-wrap gap-2">
+                        <button class="px-3 py-2 text-sm font-medium bg-primary text-white rounded-lg">Personal Info</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Experience</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Education</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Skills</button>
+                        <button class="px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">Projects</button>
+                    </nav>
+                </div>
+
+                <!-- AI Assistant Panel -->
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-4 mb-6 border border-purple-200 dark:border-purple-700">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-gray-900 dark:text-dark-text mb-1">AI Assistant</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">Get AI-powered suggestions to improve your resume content and optimize for ATS systems.</p>
+                            <button class="flex items-center space-x-2 bg-white dark:bg-dark-surface text-purple-600 dark:text-purple-400 px-3 py-2 rounded-md text-sm font-medium hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-colors border border-purple-200 dark:border-purple-600">
+                                <i class="fas fa-magic"></i>
+                                <span>Improve with AI</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information Form -->
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-dark-text mb-4 flex items-center">
+                            <i class="fas fa-user-circle mr-2 text-primary"></i>
+                            Personal Information
+                        </h2>
+                        
+                        <!-- Photo Upload -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Profile Photo</label>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-20 h-20 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-camera text-gray-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <button class="bg-white dark:bg-dark-surface border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-md text-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                                        Upload Photo
+                                    </button>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">JPG, PNG up to 2MB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
+                                <input type="text" data-bind="personal.firstName" placeholder="John" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
+                                <input type="text" data-bind="personal.lastName" placeholder="Doe" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Professional Title</label>
+                            <input type="text" data-bind="personal.title" placeholder="Senior Software Engineer" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                <input type="email" data-bind="personal.email" placeholder="john.doe@email.com" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+                                <input type="tel" data-bind="personal.phone" placeholder="(555) 123-4567" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Location</label>
+                            <input type="text" data-bind="personal.location" placeholder="San Francisco, CA" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">LinkedIn Profile</label>
+                            <input type="url" data-bind="personal.linkedin" placeholder="https://linkedin.com/in/johndoe" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Professional Summary</label>
+                                <button class="text-xs text-primary hover:text-blue-700 font-medium flex items-center space-x-1">
+                                    <i class="fas fa-magic"></i>
+                                    <span>AI Generate</span>
+                                </button>
+                            </div>
+                            <textarea data-bind="personal.summary" rows="4" placeholder="Experienced software engineer with 5+ years of experience in full-stack development..." class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-dark-surface dark:text-dark-text"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience Section Preview -->
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-dark-text mb-4 flex items-center">
+                            <i class="fas fa-briefcase mr-2 text-primary"></i>
+                            Work Experience
+                            <button class="ml-auto text-sm text-primary hover:text-blue-700 font-medium">
+                                <i class="fas fa-plus mr-1"></i>Add Experience
+                            </button>
+                        </h2>
+                        
+                        <!-- Experience Item -->
+                        <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4 mb-4">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-grip-vertical text-gray-400 cursor-move"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 dark:text-dark-text">Senior Software Engineer</h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400">Tech Company Inc. • 2021 - Present</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-gray-400 hover:text-red-500">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">
+                                <p>• Led development of microservices architecture serving 1M+ users</p>
+                                <p>• Implemented CI/CD pipelines reducing deployment time by 60%</p>
+                                <p>• Mentored junior developers and conducted code reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: ResumeForm -->
+
+        <!-- @COMPONENT: ResumePreview [right panel with live preview] -->
+        <div class="w-1/2 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
+            <div class="p-6">
+                <!-- Template Controls -->
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-dark-text">Live Preview</h3>
+                        <div class="flex items-center space-x-3">
+                            <!-- Template Selector -->
+                            <select class="px-3 py-2 bg-white dark:bg-dark-surface border border-gray-300 dark:border-gray-600 rounded-md text-sm focus:ring-primary focus:border-primary dark:text-dark-text">
+                                <option>Modern Template</option>
+                                <option>Classic Template</option>
+                                <option>Creative Template</option>
+                                <option>Minimal Template</option>
+                            </select>
+                            
+                            <!-- Zoom Controls -->
+                            <div class="flex items-center space-x-1 bg-white dark:bg-dark-surface border border-gray-300 dark:border-gray-600 rounded-md">
+                                <button class="p-2 text-gray-600 dark:text-gray-400 hover:text-primary">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                                <span class="px-2 text-sm text-gray-600 dark:text-gray-400 border-x border-gray-300 dark:border-gray-600">100%</span>
+                                <button class="p-2 text-gray-600 dark:text-gray-400 hover:text-primary">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resume Preview Document -->
+                <div class="bg-white shadow-xl rounded-lg overflow-hidden" style="aspect-ratio: 8.5/11; max-width: 100%;">
+                    <!-- Resume Header -->
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h1 class="text-2xl font-bold mb-1" data-bind="personal.firstName personal.lastName">John Doe</h1>
+                                <p class="text-blue-100 text-lg" data-bind="personal.title">Senior Software Engineer</p>
+                                <div class="flex items-center space-x-4 mt-3 text-sm text-blue-100">
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-envelope"></i>
+                                        <span data-bind="personal.email">john.doe@email.com</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-phone"></i>
+                                        <span data-bind="personal.phone">(555) 123-4567</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span data-bind="personal.location">San Francisco, CA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resume Body -->
+                    <div class="p-6 space-y-6">
+                        <!-- Professional Summary -->
+                        <section>
+                            <h2 class="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1 mb-3">Professional Summary</h2>
+                            <p class="text-gray-700 text-sm leading-relaxed" data-bind="personal.summary">
+                                Experienced software engineer with 5+ years of experience in full-stack development, specializing in React, Node.js, and cloud technologies. Proven track record of leading cross-functional teams and delivering scalable solutions that serve millions of users.
+                            </p>
+                        </section>
+
+                        <!-- Work Experience -->
+                        <section>
+                            <h2 class="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1 mb-3">Work Experience</h2>
+                            
+                            <!-- @MAP: experiences.map(experience => ( -->
+                            <div class="mb-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900">Senior Software Engineer</h3>
+                                        <p class="text-gray-600 text-sm">Tech Company Inc.</p>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">2021 - Present</span>
+                                </div>
+                                <ul class="text-gray-700 text-sm space-y-1 ml-4">
+                                    <li>• Led development of microservices architecture serving 1M+ users</li>
+                                    <li>• Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                                    <li>• Mentored junior developers and conducted code reviews</li>
+                                    <li>• Collaborated with product teams to define technical requirements</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900">Software Engineer</h3>
+                                        <p class="text-gray-600 text-sm">StartupCo</p>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">2019 - 2021</span>
+                                </div>
+                                <ul class="text-gray-700 text-sm space-y-1 ml-4">
+                                    <li>• Built responsive web applications using React and TypeScript</li>
+                                    <li>• Designed and implemented RESTful APIs with Node.js</li>
+                                    <li>• Optimized database queries improving performance by 40%</li>
+                                </ul>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </section>
+
+                        <!-- Skills -->
+                        <section>
+                            <h2 class="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1 mb-3">Technical Skills</h2>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Frontend</h4>
+                                    <p class="text-gray-600">React, TypeScript, Tailwind CSS, Next.js</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Backend</h4>
+                                    <p class="text-gray-600">Node.js, Express, Python, PostgreSQL</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Cloud & DevOps</h4>
+                                    <p class="text-gray-600">AWS, Docker, Kubernetes, CI/CD</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Tools</h4>
+                                    <p class="text-gray-600">Git, Jira, Figma, VS Code</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Education -->
+                        <section>
+                            <h2 class="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1 mb-3">Education</h2>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Bachelor of Science in Computer Science</h3>
+                                    <p class="text-gray-600 text-sm">University of Technology</p>
+                                </div>
+                                <span class="text-gray-500 text-sm">2015 - 2019</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- ATS Score Indicator -->
+                <div class="mt-6 bg-white dark:bg-dark-surface rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-semibold text-gray-900 dark:text-dark-text">ATS Compatibility Score</h4>
+                        <span class="text-2xl font-bold text-secondary">87%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-3">
+                        <div class="bg-secondary h-2 rounded-full" style="width: 87%"></div>
+                    </div>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-gray-600 dark:text-gray-400">Good compatibility with ATS systems</span>
+                        <button class="text-primary hover:text-blue-700 font-medium">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: ResumePreview -->
+    </div>
+    <!-- @END_COMPONENT: MainApplication -->
+
+    <!-- @COMPONENT: TemplateModal [overlay for template selection] -->
+    <div id="templateModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-dark-surface rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-600">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-dark-text">Choose Template</h2>
+                    <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Template Options -->
+                    <div class="group cursor-pointer">
+                        <div class="border-2 border-primary bg-primary/5 rounded-lg p-3 mb-2">
+                            <div class="bg-white rounded shadow-sm h-40 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-full h-2 bg-blue-600 rounded mb-2"></div>
+                                    <div class="space-y-1">
+                                        <div class="w-3/4 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-1/2 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-full h-1 bg-gray-300 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-dark-text">Modern</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Clean and professional</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="border-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 rounded-lg p-3 mb-2 transition-colors">
+                            <div class="bg-white rounded shadow-sm h-40 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-8 h-8 bg-gray-400 rounded-full mx-auto mb-2"></div>
+                                    <div class="space-y-1">
+                                        <div class="w-3/4 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-1/2 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-full h-1 bg-gray-300 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-dark-text">Classic</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Traditional layout</p>
+                    </div>
+
+                    <div class="group cursor-pointer">
+                        <div class="border-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 rounded-lg p-3 mb-2 transition-colors">
+                            <div class="bg-white rounded shadow-sm h-40 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-full h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded mb-2"></div>
+                                    <div class="space-y-1">
+                                        <div class="w-3/4 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-1/2 h-1 bg-gray-300 rounded mx-auto"></div>
+                                        <div class="w-full h-1 bg-gray-300 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 dark:text-dark-text">Creative</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Eye-catching design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: TemplateModal -->
+
+    <!-- @COMPONENT: AIAssistantPanel [floating AI suggestions panel] -->
+    <div id="aiPanel" class="fixed bottom-6 right-6 w-80 bg-white dark:bg-dark-surface rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 hidden">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-600">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 dark:text-dark-text">AI Suggestions</h3>
+                </div>
+                <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="p-4 max-h-96 overflow-y-auto">
+            <div class="space-y-4">
+                <!-- AI Suggestion Item -->
+                <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 border border-blue-200 dark:border-blue-700">
+                    <div class="flex items-start justify-between mb-2">
+                        <h4 class="font-medium text-blue-900 dark:text-blue-300 text-sm">Professional Summary</h4>
+                        <span class="text-xs text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded">Improvement</span>
+                    </div>
+                    <p class="text-sm text-blue-800 dark:text-blue-200 mb-3">Consider adding quantifiable achievements to make your summary more impactful.</p>
+                    <button class="text-xs bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors">
+                        Apply Suggestion
+                    </button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600">
+                    <div class="flex items-center space-x-3">
+                        <div class="animate-spin w-4 h-4 border-2 border-primary border-t-transparent rounded-full"></div>
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Analyzing content...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: AIAssistantPanel -->
+
+    <script>
+        // Theme Toggle Functionality
+        (function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.classList.toggle('dark', currentTheme === 'dark');
+            
+            themeToggle.addEventListener('click', function() {
+                const isDark = html.classList.contains('dark');
+                html.classList.toggle('dark', !isDark);
+                localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+            });
+        })();
+
+        // Template Modal Toggle
+        (function() {
+            const templateButtons = document.querySelectorAll('[data-event="click:showTemplates"]');
+            const templateModal = document.getElementById('templateModal');
+            
+            // TODO: Implement template selection functionality
+            // TODO: Add template switching logic
+            // TODO: Connect to resume preview updates
+        })();
+
+        // AI Assistant Panel Toggle
+        (function() {
+            const aiButtons = document.querySelectorAll('[data-event="click:showAI"]');
+            const aiPanel = document.getElementById('aiPanel');
+            
+            // TODO: Implement AI suggestion requests
+            // TODO: Add OpenAI API integration
+            // TODO: Handle loading and error states
+        })();
+
+        // Form Auto-Save Functionality
+        (function() {
+            const formInputs = document.querySelectorAll('input, textarea, select');
+            let saveTimeout;
+            
+            formInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    clearTimeout(saveTimeout);
+                    saveTimeout = setTimeout(() => {
+                        // TODO: Implement auto-save to backend
+                        console.log('Auto-saving form data...');
+                    }, 1000);
+                });
+            });
+        })();
+
+        // Drag and Drop Functionality for Sections
+        (function() {
+            // TODO: Implement drag and drop for resume sections
+            // TODO: Use SortableJS or similar library
+            // TODO: Update resume preview on reorder
+        })();
+
+        // PDF Export Functionality
+        (function() {
+            const exportButton = document.querySelector('[data-event="click:exportPDF"]');
+            
+            // TODO: Implement PDF generation using jsPDF
+            // TODO: Apply selected template styling
+            // TODO: Handle export loading state
+        })();
+
+        // Real-time Preview Updates
+        (function() {
+            // TODO: Implement live preview updates as user types
+            // TODO: Debounce input changes for performance
+            // TODO: Update preview layout based on selected template
+        })();
+    </script>
+</body>
+</html>
