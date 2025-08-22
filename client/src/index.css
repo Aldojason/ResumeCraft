@@ -253,6 +253,20 @@
     margin-bottom: 1rem;
   }
   
+  /* Better spacing between form sections */
+  .space-y-4 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 2rem;
+  }
+  
+  /* Better card separation */
+  [data-radix-card-root] + [data-radix-card-root] {
+    margin-top: 1.5rem;
+  }
+  
   /* Improve mobile preview spacing */
   .preview-container {
     padding: 1rem;
@@ -264,6 +278,7 @@
     padding: 1rem;
     background: rgba(249, 250, 251, 0.5);
     border-radius: 0.5rem;
+    border: 1px solid rgba(229, 231, 235, 0.5);
   }
   
   /* Improve mobile input styling */
@@ -283,6 +298,13 @@
   [data-radix-card-root] {
     border-radius: 0.75rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Better separation for nested cards */
+  [data-radix-card-root] [data-radix-card-root] {
+    margin-top: 1rem;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    background: white;
   }
   
   /* Better mobile tab styling */

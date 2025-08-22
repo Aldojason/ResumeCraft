@@ -95,7 +95,7 @@ export function ResumePreview({
                 size="sm"
                 onClick={onOpenTemplateSelector}
                 data-testid="button-open-templates"
-                className="hidden sm:flex"
+                className="hidden md:flex"
               >
                 <Layers className="w-4 h-4 mr-2" />
                 Templates

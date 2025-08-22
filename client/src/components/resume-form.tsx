@@ -753,24 +753,24 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
             </TabsContent>
 
             {/* Certifications */}
-            <TabsContent value="certifications" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="flex items-center space-x-2">
+            <TabsContent value="certifications" className="space-y-4 sm:space-y-6">
+              <Card className="border-0 shadow-sm bg-gray-50/50 dark:bg-gray-800/50 mobile-form-section tablet-form-section">
+                <CardHeader className="pb-3 sm:pb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+                    <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
                       <Award className="w-5 h-5 text-primary" />
                       <span>Certifications</span>
                     </CardTitle>
-                    <Button onClick={addCertification} data-testid="button-add-certification">
+                    <Button onClick={addCertification} data-testid="button-add-certification" size="sm">
                       <Plus className="w-4 h-4 mr-2" />
                       Add Certification
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 sm:space-y-6">
                   {resumeData.certifications.map((cert, index) => (
-                    <Card key={cert.id} className="border border-gray-200 dark:border-gray-600">
-                      <CardContent className="p-4">
+                    <Card key={cert.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-sm">
+                      <CardContent className="p-4 sm:p-6">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center space-x-2">
                             <GripVertical className="w-4 h-4 text-gray-400 cursor-move" />
@@ -836,24 +836,24 @@ export function ResumeForm({ resumeData, onDataChange, resumeId, className }: Re
             </TabsContent>
 
             {/* Achievements */}
-            <TabsContent value="achievements" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="flex items-center space-x-2">
+            <TabsContent value="achievements" className="space-y-4 sm:space-y-6">
+              <Card className="border-0 shadow-sm bg-gray-50/50 dark:bg-gray-800/50 mobile-form-section tablet-form-section">
+                <CardHeader className="pb-3 sm:pb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+                    <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
                       <Trophy className="w-5 h-5 text-primary" />
                       <span>Achievements</span>
                     </CardTitle>
-                    <Button onClick={addAchievement} data-testid="button-add-achievement">
+                    <Button onClick={addAchievement} data-testid="button-add-achievement" size="sm">
                       <Plus className="w-4 h-4 mr-2" />
                       Add Achievement
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 sm:space-y-6">
                   {resumeData.achievements.map((ach, index) => (
-                    <Card key={ach.id} className="border border-gray-200 dark:border-gray-600">
-                      <CardContent className="p-4">
+                    <Card key={ach.id} className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 shadow-sm">
+                      <CardContent className="p-4 sm:p-6">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center space-x-2">
                             <GripVertical className="w-4 h-4 text-gray-400 cursor-move" />
